@@ -205,8 +205,8 @@
                 android:backgroundTint="@color/amarillo"/>
 
         </TableRow>
-
     </TableLayout>
+
     <TextView
         android:id="@+id/pantallaRegistro"
         android:layout_width="match_parent"
@@ -220,6 +220,7 @@
         app:layout_constraintBottom_toTopOf="@+id/pantallaMostrarResultado"
         app:layout_constraintTop_toTopOf="parent"
         android:textColor="@color/white"/>
+
     <TextView
         android:id="@+id/pantallaMostrarResultado"
         android:layout_width="match_parent"
@@ -233,4 +234,18 @@
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintTop_toTopOf="parent"
         android:textColor="@color/white"/>
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_volver"
+        app:layout_constraintTop_toBottomOf="@id/tableLayout"
+        android:layout_marginTop="125dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/VerdeClaro"
+        android:textColor="@color/gOscuro"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

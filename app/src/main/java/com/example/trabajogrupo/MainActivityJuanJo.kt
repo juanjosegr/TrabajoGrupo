@@ -1,5 +1,6 @@
 package com.example.trabajogrupo
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -26,8 +27,8 @@ class MainActivityJuanJo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_juanjo)
-        pantallaMostrarResultado = findViewById<TextView>(R.id.pantallaMostrarResultado)
-        pantallaRegistro = findViewById<TextView>(R.id.pantallaRegistro)
+        pantallaMostrarResultado = findViewById(R.id.pantallaMostrarResultado)
+        pantallaRegistro = findViewById(R.id.pantallaRegistro)
 
         // Inicializar las listas de botones.
         funListaDeNumeros()
@@ -36,6 +37,8 @@ class MainActivityJuanJo : AppCompatActivity() {
         funBotonIgual()
         funBotonBorrar()
         funBotonBorrarUno()
+
+        btnRegresarMenu()
 
     }
 
@@ -289,6 +292,16 @@ class MainActivityJuanJo : AppCompatActivity() {
      */
     private fun limpiarPantallaRegistro() {
         pantallaRegistro.text = ""
+    }
+
+    /**
+     * Permite regresar al menu de selección inicial.
+     */
+    private fun btnRegresarMenu(){
+        val btnRegresar = findViewById<Button>(R.id.btnBack)
+        btnRegresar.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent) }
     }
 
 }

@@ -48,4 +48,5 @@
     <string name="calculadora_elian">calculadora Elian</string>
     <string name="calculadora_imc">Calculadora IMC</string>
     <string name="salir_del_programa">Salir del programa</string>
+    <string name="btn_volver">Volver</string>
 </resources>
