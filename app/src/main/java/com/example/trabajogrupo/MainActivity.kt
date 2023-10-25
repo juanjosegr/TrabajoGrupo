@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         navegarCalculadoraJuanjo()
-
+        navegarCalculadoraIMC()
     }
 
     //Esta es la función para saltar entre pantallas
@@ -34,6 +34,14 @@ class MainActivity : AppCompatActivity() {
         btnCalculadoraJuanjo.setOnClickListener{
         val intent = Intent(this, MainActivityJuanJo::class.java)
         startActivity(intent)
+        }
+    }
+
+    fun navegarCalculadoraIMC(){
+        val btnCalculadoraImc = findViewById<Button>(R.id.menuImc)
+        btnCalculadoraImc.setOnClickListener{
+            val intent = Intent(this, IMCActivity::class.java)
+            startActivity(intent)
         }
     }
 
