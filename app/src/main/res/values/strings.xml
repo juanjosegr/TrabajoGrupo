@@ -49,4 +49,13 @@
     <string name="calculadora_imc">Calculadora IMC</string>
     <string name="salir_del_programa">Salir del programa</string>
     <string name="btn_volver">Volver</string>
+    <string name="_hombre">HOMBRE</string>
+    <string name="_mujer">MUJER</string>
+    <string name="_altura">ALTURA</string>
+    <string name="_rangoTextoEditable">120CM</string>
+    <string name="_peso">PESO</string>
+    <string name="_edad">EDAD</string>
+    <string name="pesoenkilos">60</string>
+    <string name="edadEnNumero">30</string>
+    <string name="_calcular">CALCULAR</string>
 </resources>
