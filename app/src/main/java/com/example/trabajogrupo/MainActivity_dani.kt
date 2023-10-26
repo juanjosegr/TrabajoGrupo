@@ -140,14 +140,14 @@ class MainActivity_dani : AppCompatActivity() {
      *  Se le asigna el valor al atributo correspondiente del objeto cálculo.
      *  @param contiene el número que se le asignará al atributo.
      */
-    @SuppressLint("StringFormatInvalid")
+
     fun numero(numero: String){
         if(calculo.operacion == "") {
             calculo.num1 += numero
-            pantalla.text = getString(R.string.txtpantalla,calculo.num1)
+            pantalla.text = calculo.num1
         } else {
             calculo.num2 += numero
-            pantalla.text = getString(R.string.txtpantalla,calculo.num1 + calculo.operacion + calculo.num2)
+            pantalla.text = calculo.num1 + calculo.operacion + calculo.num2
         }
     }
 
@@ -157,7 +157,7 @@ class MainActivity_dani : AppCompatActivity() {
      * @param sinIF da valor al atributo si se encuentra fuera de un if anidado.
      */
 
-    @SuppressLint("StringFormatInvalid")
+
     fun ceroPunto(conIf: String, sinIf: String){
         // Si el atributo operación está vacio se le asigna un valor al atributo num1. Si la pantalla tiene un cero se le asigna otro valor.
             if(calculo.operacion.isEmpty()){
@@ -167,7 +167,7 @@ class MainActivity_dani : AppCompatActivity() {
                         calculo.num1 = conIf
                     }
                     //pantalla.text = calculo.num1
-                    pantalla.text = getString(R.string.txtpantalla, calculo.num1)
+                    pantalla.text = calculo.num1
                 }
             }else{
                 // Si la pantalla contiene es 0 y el atributo num2 contiene un punto se le asigna un valor al atributo num2, en caso contrario se le asigna otro valor.
@@ -178,7 +178,7 @@ class MainActivity_dani : AppCompatActivity() {
                         calculo.num2 = conIf
                     }
                     //pantalla.text = calculo.num2
-                    pantalla.text = getString(R.string.txtpantalla, calculo.num2)
+                    pantalla.text = calculo.num2
                 }
 
             }
@@ -188,13 +188,13 @@ class MainActivity_dani : AppCompatActivity() {
     /**
      * Indica la acción dependiendo si es una operación anidada o una operación simple dándole al signo igual.
      */
-    @SuppressLint("StringFormatInvalid")
+
     fun operacion(signo: String){
         if(calculo.num1 == ""){
             Execpcion("debe introducir 2 números y una operación para mostrar un resultado")
         }else{
             if(bandera == false || calculo.num2 == ""){
-                pantalla.text = getString(R.string.txtpantalla, calculo.num1 + calculo.operacion)
+                pantalla.text = calculo.num1 + calculo.operacion
             }else{
                 calculo.calculo(signo)
                 pantalla.text = calculo.resultado
@@ -222,7 +222,7 @@ class MainActivity_dani : AppCompatActivity() {
             }
             // Aparece el valor del atributo calculo por pantalla y se reinicia el resto de atributos y variables.
             pantalla.text = calculo.resultado
-            calculo.num1 = ""
+            calculo.num1 = calculo.resultado
             calculo.num2 = ""
             calculo.operacion = ""
             bandera = false
@@ -252,28 +252,28 @@ class MainActivity_dani : AppCompatActivity() {
     /**
      * Al pulsar el botón < activa la función que borra el útltimo dígito escrito.
      */
-    @SuppressLint("StringFormatInvalid")
+
     fun borrado(){
         // Si el atributo num1 de la clase cálculo esta vacio lanza un mensaje de error.
         if(calculo.num1 == ""){
-            pantalla.text = getString(R.string.txtpantalla, "0")
+            pantalla.text = "0"
             Execpcion("No hay nada que borrar")
         }
         else{
             // Borra dígito a dígito lo que tenga el atributo num1.
             if(!calculo.num1.equals("") && calculo.operacion.equals("") && calculo.num2.equals("")){
                 calculo.num1 = calculo.num1 .substring(0, calculo.num1 .length - 1)
-                pantalla.text = getString(R.string.txtpantalla, calculo.num1)
+                pantalla.text = calculo.num1
             }
             // Borra la operación que marque el atributo operación.
             if(!calculo.operacion.equals("") && calculo.num2.equals("")){
                 calculo.operacion = calculo.operacion .substring(0, calculo.operacion .length - 1)
-                pantalla.text = getString(R.string.txtpantalla, calculo.num1 + calculo.operacion)
+                pantalla.text = calculo.num1 + calculo.operacion
             }
             // Borra dígito a dígito lo que tenga el atributo num2.
             if(!calculo.num2.equals("") && !calculo.operacion.equals("") && !calculo.num1.equals("")){
                 calculo.num2 = calculo.num2 .substring(0, calculo.num2 .length - 1)
-                pantalla.text = getString(R.string.txtpantalla,calculo.num1 + calculo.operacion + calculo.num2)
+                pantalla.text = calculo.num1 + calculo.operacion + calculo.num2
             }
         }
     }
