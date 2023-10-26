@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         navegarCalculadoraJuanjo()
         navegarCalculadoraIMC()
         navegarCalculadoraElian()
-        navegarCalculadoraDani()
+        //navegarCalculadoraDani()
     }
 
     /**
@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
     fun navegarCalculadoraIMC(){
         val btnCalculadoraImc = findViewById<Button>(R.id.menuImc)
         btnCalculadoraImc.setOnClickListener{
@@ -38,18 +39,18 @@ class MainActivity : AppCompatActivity() {
 
 
     fun navegarCalculadoraElian(){
-        val btnCalculadoraImc = findViewById<Button>(R.id.)
+        val btnCalculadoraImc = findViewById<Button>(R.id.calculadoraElian)
         btnCalculadoraImc.setOnClickListener{
-            val intent = Intent(this, ::class.java)
+            val intent = Intent(this, MainActivityElian::class.java)
             startActivity(intent)
         }
     }
 
-    fun navegarCalculadoraDani(){
+    /*fun navegarCalculadoraDani(){
         val btnCalculadoraImc = findViewById<Button>(R.id.)
         btnCalculadoraImc.setOnClickListener{
             val intent = Intent(this, ::class.java)
             startActivity(intent)
         }
-    }
+    }*/
 }
