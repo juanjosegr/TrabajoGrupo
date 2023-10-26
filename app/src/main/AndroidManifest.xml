@@ -29,6 +29,14 @@
         <activity
             android:name=".IMCActivity">
         </activity>
+
+        <activity
+            android:name=".MainActivity_dani">
+        </activity>
+
+        <activity
+            android:name=".MainActivityElian">
+        </activity>
     </application>
 
 </manifest>
