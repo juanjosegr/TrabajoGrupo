@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         navegarCalculadoraJuanjo()
         navegarCalculadoraIMC()
         navegarCalculadoraElian()
-        //navegarCalculadoraDani()
+        navegarCalculadoraDani()
     }
 
     /**
@@ -46,11 +46,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    /*fun navegarCalculadoraDani(){
+    fun navegarCalculadoraDani(){
         val btnCalculadoraImc = findViewById<Button>(R.id.calculadoraDani)
         btnCalculadoraImc.setOnClickListener{
             val intent = Intent(this, MainActivity_dani::class.java)
             startActivity(intent)
         }
-    }*/
+    }
 }
