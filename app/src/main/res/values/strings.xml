@@ -59,4 +59,10 @@
     <string name="pesoenkilos">60</string>
     <string name="edadEnNumero">30</string>
     <string name="_calcular">CALCULAR</string>
+    <string name="ApellidosNombre">Juan Jose Galvin Reyes\nDaniel Gutierrez\nElian</string>
+    <string name="aumentar_edad">aumentar edad</string>
+    <string name="disminuir_edad">disminuir edad</string>
+    <string name="aumentar_peso">aumentar peso</string>
+    <string name="disminuir_peso">disminuir peso</string>
+    <string name="rango_de_altura">Rango de altura</string>
 </resources>

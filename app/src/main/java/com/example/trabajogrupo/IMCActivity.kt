@@ -27,18 +27,23 @@ class IMCActivity : AppCompatActivity() {
     private lateinit var restarEdad: FloatingActionButton
     private lateinit var mostrarEdad: TextView
     private lateinit var btnCalculo: Button
+    private lateinit var btnRegresar: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_imc)
 
-        btnRegresarMenu()
         llamadaDeComponentes()
         pulsacionesDeFunciones()
+
     }
 
 
+    /**
+     * Esta función se encarga de inicializar y asignar los elementos de la interfaz de usuario
+     * a las variables correspondientes en la actividad actual.
+     */
     private fun llamadaDeComponentes() {
         tarjetaHombre = findViewById(R.id.tarjetaIzquierda)
         tarjetaFemina = findViewById(R.id.tarjetaDerecha)
@@ -51,81 +56,133 @@ class IMCActivity : AppCompatActivity() {
         restarEdad = findViewById(R.id.btnDeEdadMenos)
         mostrarEdad = findViewById(R.id.edadEnNumero)
         btnCalculo = findViewById(R.id.btnCalcular)
+        btnRegresar = findViewById(R.id.btnRegresarIMC)
     }
 
-    private fun botonesVoF() {
-        tarjIzq = !tarjIzq
-        tarjDer = !tarjDer
-    }
-
+    /**
+     * Esta función asigna manejadores de eventos a diferentes elementos de la interfaz de usuario
+     * para llevar a cabo diversas acciones cuando se realizan pulsaciones o cambios.
+     */
     private fun pulsacionesDeFunciones() {
+
+        // Pulsación en la tarjeta para hombre
         tarjetaHombre.setOnClickListener {
             cambioDeColor(tarjetaHombre)
             colorStandar(tarjetaFemina)
             botonesVoF()
         }
+
+        // Pulsación en la tarjeta para mujer
         tarjetaFemina.setOnClickListener {
             cambioDeColor(tarjetaFemina)
             colorStandar(tarjetaHombre)
             botonesVoF()
         }
 
+        // Cambio en la barra de medida de altura
         barraMedida.addOnChangeListener { _, value, _ ->
             alturaCM.text = value.toInt().toString()
         }
 
+        // Pulsación en el botón de aumentar peso
         sumarPeso.setOnClickListener {
             var valorF = mostrarPeso.text.toString().toInt()
             valorF++
             mostrarPeso.text = valorF.toString()
         }
 
+        // Pulsación en el botón de disminuir peso
         restarPeso.setOnClickListener {
             var valorF = mostrarPeso.text.toString().toInt()
             valorF--
             mostrarPeso.text = valorF.toString()
         }
 
+        // Pulsación en el botón de aumentar edad
         sumarEdad.setOnClickListener {
             var valorF = mostrarEdad.text.toString().toInt()
             valorF++
             mostrarEdad.text = valorF.toString()
         }
 
+        // Pulsación en el botón de disminuir edad
         restarEdad.setOnClickListener {
             var valorF = mostrarEdad.text.toString().toInt()
             valorF--
             mostrarEdad.text = valorF.toString()
         }
 
+        //Pulsación en el botón de calculo de IMC para recibir el valor.
         btnCalculo.setOnClickListener {
             calculoIMC()
         }
-    }
 
-    private fun cambioDeColor(tarjeta: CardView) {
-        val color = ContextCompat.getColor(this, R.color.gClaro);
-        tarjeta.setCardBackgroundColor(color)
-    }
-
-    private fun colorStandar(tarjeta: CardView) {
-        val color = ContextCompat.getColor(this, R.color.gOscuro);
-        tarjeta.setCardBackgroundColor(color)
-    }
-
-
-    private fun btnRegresarMenu() {
-        val btnRegresar = findViewById<Button>(R.id.btnRegresarIMC)
-        btnRegresar.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+        //Pulsación en el botón regresar para volver al menu principal.
+        btnRegresar.setOnClickListener{
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
         }
     }
 
-    private fun calculoIMC(){
-        val IMC = mostrarPeso.text.toString().toInt() / ((alturaCM.text.toString().toDouble() / 100) * (alturaCM.text.toString().toDouble() / 100))
-        val redondeo = DecimalFormat("#.##")
-        val resultado = redondeo.format(IMC)
-        Toast.makeText(this, "Su IMC es -> $resultado", Toast.LENGTH_LONG).show()
+    /**
+     * Esta función alterna el estado de dos variables booleanas, `tarjIzq` y `tarjDer`,
+     * utilizadas para realizar un seguimiento de la selección de tarjetas de género (hombre/mujer).
+     * Cambia el estado de una tarjeta activa a la inactiva y viceversa.
+     */
+    private fun botonesVoF() {
+        tarjIzq = !tarjIzq
+        tarjDer = !tarjDer
     }
+
+    /**
+     * Esta función cambia el color de fondo de una tarjeta (CardView) a un color específico.
+     *
+     * @param tarjeta La tarjeta a la que se le cambiará el color de fondo.
+     */
+    private fun cambioDeColor(tarjeta: CardView) {
+        val color = ContextCompat.getColor(this, R.color.gClaro)
+        tarjeta.setCardBackgroundColor(color)
+    }
+
+    /**
+     * Esta función restablece el color de fondo de una tarjeta (CardView) a su estado predeterminado.
+     *
+     * @param tarjeta La tarjeta a la que se le restablecerá el color de fondo.
+     */
+    private fun colorStandar(tarjeta: CardView) {
+        val color = ContextCompat.getColor(this, R.color.gOscuro)
+        tarjeta.setCardBackgroundColor(color)
+    }
+
+    /**
+    * Calcula el Índice de Masa Corporal (IMC) utilizando los valores de altura y peso
+    * proporcionados en la interfaz de usuario. Luego muestra el resultado del IMC en un mensaje
+    * de Toast.
+    */
+    private fun calculoIMC() {
+        // Obtén la cadena de altura
+        val alturaStr = alturaCM.text.toString()
+
+        // Elimina cualquier carácter no numérico (como "CM")
+        val alturaLimpia = alturaStr.replace(Regex("[^0-9.]"), "")
+
+        try {
+            // Intenta convertir la cadena limpia a un valor numérico
+            val altura = alturaLimpia.toDouble()
+
+            // Calcula el IMC
+            val IMC = mostrarPeso.text.toString().toInt() / ((altura / 100) * (altura / 100))
+
+            // Redondea el IMC a dos decimales
+            val redondeo = DecimalFormat("#.##")
+            val resultado = redondeo.format(IMC)
+
+            // Muestra el resultado del IMC en un mensaje de tostada
+            Toast.makeText(this, "Su IMC es -> $resultado", Toast.LENGTH_LONG).show()
+        } catch (e: NumberFormatException) {
+            // Manejo de error: La cadena no se pudo convertir a un valor numérico
+            Toast.makeText(this, "La altura no es un número válido", Toast.LENGTH_LONG).show()
+        }
+    }
+
 }
