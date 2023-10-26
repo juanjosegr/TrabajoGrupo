@@ -41,6 +41,8 @@ class MainActivity_dani : AppCompatActivity() {
 
         BotonesClick()
 
+        btnRegresarMenu()
+
     }
 
     /**
@@ -280,7 +282,7 @@ class MainActivity_dani : AppCompatActivity() {
      * Permite regresar al menu de selección inicial.
      */
     private fun btnRegresarMenu(){
-        val btnRegresar = findViewById<Button>(R.id.btnBack)
+        val btnRegresar = findViewById<Button>(R.id.vueltaDani)
         btnRegresar.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent) }
