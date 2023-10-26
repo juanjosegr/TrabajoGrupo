@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat
 
 class IMCActivity: AppCompatActivity() {
 
@@ -37,18 +38,27 @@ class IMCActivity: AppCompatActivity() {
 
     private fun pulsacionesDeFunciones(){
         tarjetaHombre.setOnClickListener{
-            cambioDeColor()
+            cambioDeColor(tarjetaHombre)
+            colorStandar(tarjetaFemina)
         }
         tarjetaFemina.setOnClickListener{
-            println("tarjeta derecha")
+            cambioDeColor(tarjetaFemina)
+            colorStandar(tarjetaHombre)
         }
     }
 
-    private fun cambioDeColor(){
-
+    private fun cambioDeColor(tarjeta: CardView){
+        val color = ContextCompat.getColor(this, R.color.gClaro);
+        tarjeta.setCardBackgroundColor(color)
     }
 
-    private fun btnRegresarMenu(){
+    private fun colorStandar(tarjeta: CardView) {
+        val color = ContextCompat.getColor(this, R.color.gOscuro);
+        tarjeta.setCardBackgroundColor(color)
+    }
+
+
+        private fun btnRegresarMenu(){
         val btnRegresar = findViewById<Button>(R.id.btnRegresarIMC)
         btnRegresar.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)
