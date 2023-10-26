@@ -1,5 +1,7 @@
 package com.example.trabajogrupo
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -136,6 +138,7 @@ class MainActivity_dani : AppCompatActivity() {
      *  Se le asigna el valor al atributo correspondiente del objeto cálculo.
      *  @param contiene el número que se le asignará al atributo.
      */
+    @SuppressLint("StringFormatInvalid")
     fun numero(numero: String){
         if(calculo.operacion == "") {
             calculo.num1 += numero
@@ -152,6 +155,7 @@ class MainActivity_dani : AppCompatActivity() {
      * @param sinIF da valor al atributo si se encuentra fuera de un if anidado.
      */
 
+    @SuppressLint("StringFormatInvalid")
     fun ceroPunto(conIf: String, sinIf: String){
         // Si el atributo operación está vacio se le asigna un valor al atributo num1. Si la pantalla tiene un cero se le asigna otro valor.
             if(calculo.operacion.isEmpty()){
@@ -182,6 +186,7 @@ class MainActivity_dani : AppCompatActivity() {
     /**
      * Indica la acción dependiendo si es una operación anidada o una operación simple dándole al signo igual.
      */
+    @SuppressLint("StringFormatInvalid")
     fun operacion(signo: String){
         if(calculo.num1 == ""){
             Execpcion("debe introducir 2 números y una operación para mostrar un resultado")
@@ -245,6 +250,7 @@ class MainActivity_dani : AppCompatActivity() {
     /**
      * Al pulsar el botón < activa la función que borra el útltimo dígito escrito.
      */
+    @SuppressLint("StringFormatInvalid")
     fun borrado(){
         // Si el atributo num1 de la clase cálculo esta vacio lanza un mensaje de error.
         if(calculo.num1 == ""){
@@ -269,4 +275,15 @@ class MainActivity_dani : AppCompatActivity() {
             }
         }
     }
+
+    /**
+     * Permite regresar al menu de selección inicial.
+     */
+    private fun btnRegresarMenu(){
+        val btnRegresar = findViewById<Button>(R.id.btnBack)
+        btnRegresar.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent) }
+    }
+
 }
