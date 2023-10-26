@@ -24,6 +24,7 @@ class IMCActivity : AppCompatActivity() {
     private lateinit var sumarEdad: FloatingActionButton
     private lateinit var restarEdad: FloatingActionButton
     private lateinit var mostrarEdad: TextView
+    private lateinit var btnCalculo: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +34,7 @@ class IMCActivity : AppCompatActivity() {
         btnRegresarMenu()
         llamadaDeComponentes()
         pulsacionesDeFunciones()
+        calculoIMC()
     }
 
 
@@ -47,6 +49,7 @@ class IMCActivity : AppCompatActivity() {
         sumarEdad = findViewById(R.id.btnDeEdadMas)
         restarEdad = findViewById(R.id.btnDeEdadMenos)
         mostrarEdad = findViewById(R.id.edadEnNumero)
+        btnCalculo = findViewById(R.id.btnCalcular)
     }
 
     private fun botonesVoF() {
@@ -93,6 +96,10 @@ class IMCActivity : AppCompatActivity() {
             valorF--
             mostrarEdad.text = valorF.toString()
         }
+
+        btnCalculo.setOnClickListener {
+            calculoIMC()
+        }
     }
 
     private fun cambioDeColor(tarjeta: CardView) {
@@ -112,5 +119,10 @@ class IMCActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    private fun calculoIMC(){
+        val IMC = mostrarPeso.toString().toInt() / (alturaCM.toString().toDouble() * alturaCM.toString().toDouble())
+        println(IMC)
     }
 }
