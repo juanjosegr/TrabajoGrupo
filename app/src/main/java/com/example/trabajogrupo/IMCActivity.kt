@@ -21,7 +21,7 @@ class IMCActivity: AppCompatActivity() {
         btnRegresarMenu()
         llamadaDeComponentes()
         pulsacionesDeFunciones()
-        botonesVoF()
+
 
 
     }
@@ -38,10 +38,12 @@ class IMCActivity: AppCompatActivity() {
 
     private fun pulsacionesDeFunciones(){
         tarjetaHombre.setOnClickListener{
+            botonesVoF()
             cambioDeColor(tarjetaHombre)
             colorStandar(tarjetaFemina)
         }
         tarjetaFemina.setOnClickListener{
+            botonesVoF()
             cambioDeColor(tarjetaFemina)
             colorStandar(tarjetaHombre)
         }
