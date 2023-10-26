@@ -6,60 +6,66 @@ import android.os.Bundle
 import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var botones : ArrayList<Button>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        navegarCalculadoraJuanjo()
-        navegarCalculadoraIMC()
-        navegarCalculadoraElian()
-        navegarCalculadoraDani()
-        Salir()
+        ListaBotones()
+        InitBotones()
     }
 
     /**
-     * Funcion creada para ir a una calculadora en específico.
+     *  Lista donde se guardan los botones del IMC.
      */
 
-    fun navegarCalculadoraJuanjo(){
-        val btnCalculadoraJuanjo = findViewById<Button>(R.id.calculadoraJuanjo)
-        btnCalculadoraJuanjo.setOnClickListener{
-        val intent = Intent(this, MainActivityJuanJo::class.java)
-        startActivity(intent)
+    fun ListaBotones(){
+            botones = ArrayList()
+            botones.add(findViewById<Button>(R.id.calculadoraJuanjo))
+            botones.add(findViewById<Button>(R.id.menuImc))
+            botones.add(findViewById<Button>(R.id.calculadoraElian))
+            botones.add(findViewById<Button>(R.id.calculadoraDani))
+            botones.add(findViewById<Button>(R.id.SalirPrograma))
+    }
+
+    /**
+     *  Se recorre la lista de botones.
+     */
+    fun InitBotones(){
+        for(n in botones.indices){
+            botones[n].setOnClickListener {
+                Navegacion(n)
+            }
         }
     }
 
-
-    fun navegarCalculadoraIMC(){
-        val btnCalculadoraImc = findViewById<Button>(R.id.menuImc)
-        btnCalculadoraImc.setOnClickListener{
-            val intent = Intent(this, IMCActivity::class.java)
-            startActivity(intent)
-        }
-    }
-
-
-    fun navegarCalculadoraElian(){
-        val btnCalculadoraImc = findViewById<Button>(R.id.calculadoraElian)
-        btnCalculadoraImc.setOnClickListener{
-            val intent = Intent(this, MainActivityElian::class.java)
-            startActivity(intent)
-        }
-    }
-
-    fun navegarCalculadoraDani(){
-        val btnCalculadoraImc = findViewById<Button>(R.id.calculadoraDani)
-        btnCalculadoraImc.setOnClickListener{
-            val intent = Intent(this, MainActivity_dani::class.java)
-            startActivity(intent)
-        }
-    }
-
-    fun Salir(){
-        val btnCalculadoraImc = findViewById<Button>(R.id.SalirPrograma)
-        btnCalculadoraImc.setOnClickListener{
-            finishAffinity()
-            System.exit(0)
+    /**
+     *  Se indica la funcion a realizar
+     *  @param boton indica el número elegido y la función a realizar.
+     */
+    fun Navegacion(boton: Int){
+        when(boton){
+            0 -> {
+                val intent = Intent(this, MainActivityJuanJo::class.java)
+                startActivity(intent)
+            }
+            1 -> {
+                val intent = Intent(this, IMCActivity::class.java)
+                startActivity(intent)
+            }
+            2 -> {
+                val intent = Intent(this, MainActivityElian::class.java)
+                startActivity(intent)
+            }
+            3 -> {
+                val intent = Intent(this, MainActivity_dani::class.java)
+                startActivity(intent)
+            }
+            4 -> {
+                finishAffinity()
+                System.exit(0)
+            }
         }
     }
 }
