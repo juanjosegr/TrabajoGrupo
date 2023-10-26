@@ -25,7 +25,7 @@ class IMCActivity: AppCompatActivity() {
         btnRegresarMenu()
         llamadaDeComponentes()
         pulsacionesDeFunciones()
-
+        mondongo
     }
 
 
