@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
         navegarCalculadoraIMC()
         navegarCalculadoraElian()
         navegarCalculadoraDani()
+        Salir()
     }
 
     /**
@@ -51,6 +52,14 @@ class MainActivity : AppCompatActivity() {
         btnCalculadoraImc.setOnClickListener{
             val intent = Intent(this, MainActivity_dani::class.java)
             startActivity(intent)
+        }
+    }
+
+    fun Salir(){
+        val btnCalculadoraImc = findViewById<Button>(R.id.SalirPrograma)
+        btnCalculadoraImc.setOnClickListener{
+            finishAffinity()
+            System.exit(0)
         }
     }
 }
