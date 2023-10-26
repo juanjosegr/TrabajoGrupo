@@ -9,7 +9,7 @@ import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import com.google.android.material.slider.RangeSlider
 
-class IMCActivity: AppCompatActivity() {
+class IMCActivity : AppCompatActivity() {
 
     private var tarjIzq: Boolean = true
     var tarjDer: Boolean = false
@@ -25,29 +25,28 @@ class IMCActivity: AppCompatActivity() {
         btnRegresarMenu()
         llamadaDeComponentes()
         pulsacionesDeFunciones()
-        mondongo
     }
 
 
-    private fun llamadaDeComponentes(){
+    private fun llamadaDeComponentes() {
         tarjetaHombre = findViewById(R.id.tarjetaIzquierda)
         tarjetaFemina = findViewById(R.id.tarjetaDerecha)
         barraMedida = findViewById(R.id.BarraDeRango)
         alturaCM = findViewById(R.id.alturaEnCm)
     }
 
-    private fun botonesVoF(){
+    private fun botonesVoF() {
         tarjIzq = !tarjIzq
         tarjDer = !tarjDer
     }
 
-    private fun pulsacionesDeFunciones(){
-        tarjetaHombre.setOnClickListener{
+    private fun pulsacionesDeFunciones() {
+        tarjetaHombre.setOnClickListener {
             cambioDeColor(tarjetaHombre)
             colorStandar(tarjetaFemina)
             botonesVoF()
         }
-        tarjetaFemina.setOnClickListener{
+        tarjetaFemina.setOnClickListener {
             cambioDeColor(tarjetaFemina)
             colorStandar(tarjetaHombre)
             botonesVoF()
@@ -58,7 +57,7 @@ class IMCActivity: AppCompatActivity() {
         }
     }
 
-    private fun cambioDeColor(tarjeta: CardView){
+    private fun cambioDeColor(tarjeta: CardView) {
         val color = ContextCompat.getColor(this, R.color.gClaro);
         tarjeta.setCardBackgroundColor(color)
     }
@@ -69,10 +68,11 @@ class IMCActivity: AppCompatActivity() {
     }
 
 
-        private fun btnRegresarMenu(){
+    private fun btnRegresarMenu() {
         val btnRegresar = findViewById<Button>(R.id.btnRegresarIMC)
-        btnRegresar.setOnClickListener{
+        btnRegresar.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent) }
+            startActivity(intent)
+        }
     }
 }
