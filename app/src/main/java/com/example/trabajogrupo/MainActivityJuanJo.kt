@@ -80,7 +80,7 @@ class MainActivityJuanJo : AppCompatActivity() {
     /**
      * Configura los botones de números para establecer los eventos de clic y actualizar la pantalla.
      */
-    fun funListaDeNumeros(){
+    private fun funListaDeNumeros(){
         listaDeNumeros = mutableListOf()
         listaNumeros()
         pantallaMostrarResultado = findViewById<TextView>(R.id.pantallaMostrarResultado)
@@ -116,7 +116,7 @@ class MainActivityJuanJo : AppCompatActivity() {
     /**
      * Configura los botones de operaciones para establecer eventos de clic y realizar cálculos.
      */
-    fun funListaDeOperaciones(){
+    private fun funListaDeOperaciones(){
         listaDeOperaciones = mutableListOf()
         listaOperaciones()
         pantallaMostrarResultado = findViewById<TextView>(R.id.pantallaMostrarResultado)
@@ -165,7 +165,7 @@ class MainActivityJuanJo : AppCompatActivity() {
     /**
      * Configura el botón igual para realizar cálculos cuando se presiona.
      */
-    fun funBotonIgual(){
+    private fun funBotonIgual(){
         // Configuración de la acción cuando se presiona el botón igual.
         val btnIgual = findViewById<Button>(R.id.btn_Igual)
         btnIgual.setOnClickListener {
@@ -208,7 +208,7 @@ class MainActivityJuanJo : AppCompatActivity() {
     /**
      * Configura el botón "Borrar" para reiniciar la calculadora y establecer la pantalla en 0.
      */
-    fun funBotonBorrar(){
+    private fun funBotonBorrar(){
         // Configuración de la acción cuando se presiona el botón borrar.
         val btnBorrar = findViewById<Button>(R.id.btn_Borrar)
         btnBorrar.setOnClickListener{
@@ -222,7 +222,7 @@ class MainActivityJuanJo : AppCompatActivity() {
     /**
      * Configura el botón "Borrar Uno" para eliminar el último carácter de la pantalla y registro.
      */
-    fun funBotonBorrarUno() {
+    private fun funBotonBorrarUno() {
         val btnBorrarUno = findViewById<Button>(R.id.btn_BorrarUno)
 
         btnBorrarUno.setOnClickListener {
