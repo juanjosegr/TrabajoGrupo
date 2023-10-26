@@ -47,9 +47,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     /*fun navegarCalculadoraDani(){
-        val btnCalculadoraImc = findViewById<Button>(R.id.)
+        val btnCalculadoraImc = findViewById<Button>(R.id.calculadoraDani)
         btnCalculadoraImc.setOnClickListener{
-            val intent = Intent(this, ::class.java)
+            val intent = Intent(this, MainActivity_dani::class.java)
             startActivity(intent)
         }
     }*/
