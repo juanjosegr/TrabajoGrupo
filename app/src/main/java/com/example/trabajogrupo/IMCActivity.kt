@@ -4,11 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.slider.RangeSlider
+import java.text.DecimalFormat
 
 class IMCActivity : AppCompatActivity() {
 
@@ -34,7 +36,6 @@ class IMCActivity : AppCompatActivity() {
         btnRegresarMenu()
         llamadaDeComponentes()
         pulsacionesDeFunciones()
-        calculoIMC()
     }
 
 
@@ -122,7 +123,9 @@ class IMCActivity : AppCompatActivity() {
     }
 
     private fun calculoIMC(){
-        val IMC = mostrarPeso.toString().toInt() / (alturaCM.toString().toDouble() * alturaCM.toString().toDouble())
-        println(IMC)
+        val IMC = mostrarPeso.text.toString().toInt() / ((alturaCM.text.toString().toDouble() / 100) * (alturaCM.text.toString().toDouble() / 100))
+        val redondeo = DecimalFormat("#.##")
+        val resultado = redondeo.format(IMC)
+        Toast.makeText(this, "Su IMC es -> $resultado", Toast.LENGTH_LONG).show()
     }
 }
