@@ -242,7 +242,19 @@
                 android:textStyle="bold"
                 tools:ignore="HardcodedText" />
 
+
+
         </TableRow>
+
+        <Button
+            android:id="@+id/botonVolver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_volver"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText"
+            android:layout_marginTop="40dp"/>
 
     </TableLayout>
 

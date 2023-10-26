@@ -1,5 +1,6 @@
 package com.example.trabajogrupo
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -34,6 +35,7 @@ class MainActivityElian : AppCompatActivity() {
             findViewById(R.id.botonCE1),
             findViewById(R.id.botonPunto)
         )
+
         fun mensError(msj: String){
             Toast.makeText(this, msj, Toast.LENGTH_LONG).show()
         }
@@ -54,6 +56,13 @@ class MainActivityElian : AppCompatActivity() {
                 texto.hint = resultado
             }
         }
+        btnRegresarMenu()
+    }
+    private fun btnRegresarMenu(){
+        val btnRegresar = findViewById<Button>(R.id.botonVolver)
+        btnRegresar.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent) }
     }
 }
 
