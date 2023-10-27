@@ -174,7 +174,7 @@ class IMCActivity : AppCompatActivity() {
             val IMC = mostrarPeso.text.toString().toInt() / ((altura / 100) * (altura / 100))
 
             // Redondea el IMC a dos decimales
-            val redondeo = DecimalFormat("#.##")
+            val redondeo = DecimalFormat("#.#")
             val resultado = redondeo.format(IMC)
 
             // Muestra el resultado del IMC en un mensaje de tostada
