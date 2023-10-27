@@ -121,7 +121,8 @@
             android:stepSize = "1"
             android:valueFrom = "120"
             android:valueTo = "200"
-        />
+            android:contentDescription="@string/rango_de_altura"
+            />
 
     </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -176,6 +177,7 @@
                     android:layout_marginEnd="10dp"
                     android:src="@drawable/minus"
                     android:backgroundTint="@color/rojo"
+                    android:contentDescription="@string/disminuir_peso"
                     />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -184,6 +186,7 @@
                     android:layout_height="wrap_content"
                     android:src="@android:drawable/ic_input_add"
                     android:backgroundTint="@color/VerdeClaro"
+                    android:contentDescription="@string/aumentar_peso"
                     />
 
             </LinearLayout>
@@ -238,14 +241,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
                     android:src="@drawable/minus"
-                    android:backgroundTint="@color/rojo"/>
+                    android:backgroundTint="@color/rojo"
+                    android:contentDescription="@string/disminuir_edad"/>
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/btnDeEdadMas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@android:drawable/ic_input_add"
-                    android:backgroundTint="@color/VerdeClaro" />
+                    android:backgroundTint="@color/VerdeClaro"
+                    android:contentDescription="@string/aumentar_edad"/>
 
             </LinearLayout>
 
