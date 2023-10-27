@@ -1,4 +1,4 @@
-package com.example.trabajogrupo
+package com.example.trabajogrupo.Juanjo
 
 /**
  *

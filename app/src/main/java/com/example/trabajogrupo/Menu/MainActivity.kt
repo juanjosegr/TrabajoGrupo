@@ -1,9 +1,14 @@
-package com.example.trabajogrupo
+package com.example.trabajogrupo.Menu
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.example.trabajogrupo.Dani.MainActivity_dani
+import com.example.trabajogrupo.Elian.MainActivityElian
+import com.example.trabajogrupo.IMC.IMCActivity
+import com.example.trabajogrupo.Juanjo.MainActivityJuanJo
+import com.example.trabajogrupo.R
 
 class MainActivity : AppCompatActivity() {
 

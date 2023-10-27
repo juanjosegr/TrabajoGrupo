@@ -1,7 +1,8 @@
-package com.example.trabajogrupo
+package com.example.trabajogrupo.IMC
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.trabajogrupo.R
 
 class activity_imc_resultado : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

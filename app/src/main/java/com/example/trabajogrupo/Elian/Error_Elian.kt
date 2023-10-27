@@ -1,4 +1,4 @@
-package com.example.trabajogrupo
+package com.example.trabajogrupo.Elian
 class Error_Elian {
     companion object {
         /**

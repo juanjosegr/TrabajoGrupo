@@ -13,10 +13,10 @@
         android:theme="@style/Theme.TrabajoGrupo"
         tools:targetApi="31">
         <activity
-            android:name=".activity_imc_resultado"
+            android:name=".IMC.activity_imc_resultado"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Menu.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,10 +24,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivityJuanJo"></activity>
-        <activity android:name=".IMCActivity"></activity>
-        <activity android:name=".MainActivity_dani"></activity>
-        <activity android:name=".MainActivityElian"></activity>
+        <activity android:name=".Juanjo.MainActivityJuanJo"></activity>
+        <activity android:name=".IMC.IMCActivity"></activity>
+        <activity android:name=".Dani.MainActivity_dani"></activity>
+        <activity android:name=".Elian.MainActivityElian"></activity>
     </application>
 
 </manifest>

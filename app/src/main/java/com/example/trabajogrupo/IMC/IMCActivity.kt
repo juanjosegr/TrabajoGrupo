@@ -1,4 +1,4 @@
-package com.example.trabajogrupo
+package com.example.trabajogrupo.IMC
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
+import com.example.trabajogrupo.Menu.MainActivity
+import com.example.trabajogrupo.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.slider.RangeSlider
 import java.text.DecimalFormat

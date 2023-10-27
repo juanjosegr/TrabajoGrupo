@@ -1,4 +1,4 @@
-package com.example.trabajogrupo
+package com.example.trabajogrupo.Dani
 
 class Calculo_dani {
     var num1 = ""
