@@ -31,7 +31,9 @@ class IMCActivity : AppCompatActivity() {
     private lateinit var btnCalculo: Button
     private lateinit var btnRegresar: Button
 
-
+    companion object{
+        var IMC_export: String = ""
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_imc)
@@ -117,6 +119,8 @@ class IMCActivity : AppCompatActivity() {
         //Pulsación en el botón de calculo de IMC para recibir el valor.
         btnCalculo.setOnClickListener {
             calculoIMC()
+            val intent = Intent(this, activity_imc_resultado::class.java)
+            startActivity(intent)
         }
 
         //Pulsación en el botón regresar para volver al menu principal.
@@ -179,8 +183,12 @@ class IMCActivity : AppCompatActivity() {
             val redondeo = DecimalFormat("#.#")
             val resultado = redondeo.format(IMC)
 
+            IMC_export = redondeo.format(IMC)
+
             // Muestra el resultado del IMC en un mensaje de tostada
-            Toast.makeText(this, "Su IMC es -> $resultado", Toast.LENGTH_LONG).show()
+            //Toast.makeText(this, "Su IMC es -> $resultado", Toast.LENGTH_LONG).show()
+
+
         } catch (e: NumberFormatException) {
             // Manejo de error: La cadena no se pudo convertir a un valor numérico
             Toast.makeText(this, "La altura no es un número válido", Toast.LENGTH_LONG).show()

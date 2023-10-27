@@ -9,4 +9,8 @@ class activity_imc_resultado : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_imc_resultado)
     }
+
+
+
+
 }

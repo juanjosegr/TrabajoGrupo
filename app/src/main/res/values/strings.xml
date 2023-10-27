@@ -3,6 +3,8 @@
     <string name="app_name_juanjo">Calculadora</string>
     <string name="_dani">Calculadora</string>
     <string name="app_name_Elian">Calculadora</string>
+
+    <!--String de juanjo -->
     <string name="_ce">CE</string>
     <string name="_7">7</string>
     <string name="_8">8</string>
@@ -22,6 +24,8 @@
     <string name="_dividir">/</string>
     <string name="_pantallaMostrar">0</string>
     <string name="_borrarUno"><![CDATA[<-]]></string>
+
+    <!--String de Elian -->
     <string name="botCE">C</string>
     <string name="botMas">+</string>
     <string name="botMenos">-</string>
@@ -44,12 +48,16 @@
     <string name="txt_borrar"><![CDATA[<]]></string>
     <string name="_multiplicar">X</string>
     <string name="txtDaniPrueba">""</string>
+
+    <!--String de menu -->
     <string name="calculadora_juanjo">Calculadora Juanjo</string>
     <string name="calculadora_dani">calculadora Dani</string>
     <string name="calculadora_elian">calculadora Elian</string>
     <string name="calculadora_imc">Calculadora IMC</string>
     <string name="salir_del_programa">Salir del programa</string>
     <string name="btn_volver">Volver</string>
+
+    <!--String de IMC -->
     <string name="_hombre">HOMBRE</string>
     <string name="_mujer">MUJER</string>
     <string name="_altura">ALTURA</string>
