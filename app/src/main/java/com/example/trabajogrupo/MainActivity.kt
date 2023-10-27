@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-     *  Se recorre la lista de botones.
+     *  Recorre la lista de botones y se obtiene la dirección del botón pulsado.
      */
     fun InitBotones(){
         for(n in botones.indices){
@@ -42,27 +42,32 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-     *  Se indica la funcion a realizar
+     *  Dependiendo del valor del parámetro, abre una Activity o sale del programa
      *  @param boton indica el número elegido y la función a realizar.
      */
     fun Navegacion(boton: Int){
         when(boton){
+            // Abre la Activity de la calculadora de Juango.
             0 -> {
                 val intent = Intent(this, MainActivityJuanJo::class.java)
                 startActivity(intent)
             }
+            // Abre la Activity de la calculadora IMC.
             1 -> {
                 val intent = Intent(this, IMCActivity::class.java)
                 startActivity(intent)
             }
+            // Abre la Activity de la calculadora de Elian.
             2 -> {
                 val intent = Intent(this, MainActivityElian::class.java)
                 startActivity(intent)
             }
+            // Abre la Activity de la calculadora de Daniel.
             3 -> {
                 val intent = Intent(this, MainActivity_dani::class.java)
                 startActivity(intent)
             }
+            // Sale de la aplicación.
             4 -> {
                 finishAffinity()
                 System.exit(0)
