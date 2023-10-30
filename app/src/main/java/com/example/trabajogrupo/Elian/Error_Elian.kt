@@ -8,7 +8,8 @@ class Error_Elian {
          */
         fun excepFormato(valores: String): Boolean {
             //utilizamos una Regex para verificar el formato -> numero,operador,numero
-            val operRegul = "\\d+[-+x/]\\d+".toRegex()
+            //val operRegul = "\\d+[-+x/]\\d+".toRegex()
+            val operRegul = "\\d+(\\.\\d+)?[-+x/]\\d+(\\.\\d+)?".toRegex()
             //comprobamos 1- Si esta vacío || 2- Si cumple con nuestro formato
             //en el caso de que no se cumplan, nos devuelve un Boolean que utilizaremos para soltar la excepcion
             when {
