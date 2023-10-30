@@ -55,7 +55,7 @@ class MainActivityElian : AppCompatActivity() {
                 if (resultado == ""){
                     mensError("Error de cifras")
                 }
-                texto.hint = resultado
+                texto.text = resultado
             }
         }
         btnRegresarMenu()
